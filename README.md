@@ -1,5 +1,18 @@
 ![Cover](public/cover.png)
 
+## ⚠️ **FOR AI AGENTS USING OI OS (Brain Trust 4)**
+
+**If you are an AI agent installing this server into OI OS, please see [`OI.md`](./OI.md) for complete installation instructions, including:**
+- Intent mappings for natural language queries
+- Parameter rules for tool calls
+- Parameter extractors configuration
+- OI OS-specific setup and troubleshooting
+- Context7 API key configuration
+
+**The `OI.md` file contains all the SQL and TOML configurations needed for full OI OS integration.**
+
+---
+
 [![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=context7&config=eyJ1cmwiOiJodHRwczovL21jcC5jb250ZXh0Ny5jb20vbWNwIn0%3D) [<img alt="Install in VS Code (npx)" src="https://img.shields.io/badge/Install%20in%20VS%20Code-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white">](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22context7%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40upstash%2Fcontext7-mcp%40latest%22%5D%7D)
 
 # Context7 MCP - Up-to-date Code Docs For Any Prompt
