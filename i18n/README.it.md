@@ -140,11 +140,9 @@ Può essere installato tramite [Zed Extensions](https://zed.dev/extensions?query
 {
   "context_servers": {
     "Context7": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@upstash/context7-mcp@latest"]
-      },
-      "settings": {}
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -205,10 +203,7 @@ Per maggiori informazioni, consulta la [documentazione ufficiale GitHub](https:/
       "headers": {
         "CONTEXT7_API_KEY": "YOUR_API_KEY"
       },
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"]
     }
   }
 }
@@ -222,16 +217,8 @@ Oppure, per un server locale:
     "context7": {
       "type": "local",
       "command": "npx",
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ],
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "YOUR_API_KEY"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"],
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -303,7 +290,7 @@ Se preferisci eseguire il server MCP in un contenitore Docker:
 - `get-library-docs`: Recupera la documentazione per una libreria utilizzando un ID di libreria compatibile con Context7.
 - `context7CompatibleLibraryID` (obbligatorio)
 - `topic` (opzionale): Concentra la documentazione su un argomento specifico (es., "routing", "hooks")
-- `tokens` (opzionale, predefinito 10000): Numero massimo di token da restituire. I valori inferiori a 10000 vengono automaticamente aumentati a 10000.
+- `page` (opzionale, predefinito 1): Numero di pagina per la paginazione (1-10). Se il contesto non è sufficiente, prova page=2, page=3, ecc. con lo stesso argomento.
 
 ## Sviluppo
 

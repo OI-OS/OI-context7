@@ -283,11 +283,9 @@ Smithery キーは [Smithery.ai Web ページ](https://smithery.ai/server/@upsta
 {
   "context_servers": {
     "Context7": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@upstash/context7-mcp"]
-      },
-      "settings": {}
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -388,10 +386,7 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
       "headers": {
         "CONTEXT7_API_KEY": "YOUR_API_KEY"
       },
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"]
     }
   }
 }
@@ -405,16 +400,8 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
     "context7": {
       "type": "local",
       "command": "npx",
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ],
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "YOUR_API_KEY"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"],
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -631,7 +618,7 @@ Context7 MCP は LLM が使用できる以下のツールを提供します：
 - `get-library-docs`：Context7 互換のライブラリ ID を使用してライブラリのドキュメントを取得します。
   - `context7CompatibleLibraryID`（必須）：正確な Context7 互換のライブラリ ID（例：`/mongodb/docs`、`/vercel/next.js`）
   - `topic`（任意）：ドキュメントの特定のトピックに焦点を当てます（例："routing"、"hooks"）
-  - `tokens`（任意、デフォルト 10000）：返すトークンの最大数。デフォルト値 10000 未満の値は自動的に 10000 に増加されます。
+  - `page`（任意、デフォルト 1）：ページネーションのページ番号（1-10）。コンテキストが不十分な場合は、同じトピックでpage=2、page=3などを試してください。
 
 ## 💻 開発
 

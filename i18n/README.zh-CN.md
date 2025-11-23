@@ -245,11 +245,9 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp --api-key YOUR_API_KEY
 {
   "context_servers": {
     "Context7": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
-      },
-      "settings": {}
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -754,10 +752,7 @@ http_headers = { "CONTEXT7_API_KEY" = "YOUR_API_KEY" }
       "headers": {
         "CONTEXT7_API_KEY": "YOUR_API_KEY"
       },
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"]
     }
   }
 }
@@ -771,16 +766,8 @@ http_headers = { "CONTEXT7_API_KEY" = "YOUR_API_KEY" }
     "context7": {
       "type": "local",
       "command": "npx",
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ],
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "YOUR_API_KEY"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"],
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -1054,7 +1041,7 @@ Context7 MCP 提供以下 LLM 可以使用的工具：
 - `get-library-docs`：使用 Context7 兼容的库 ID 获取库的文档。
   - `context7CompatibleLibraryID`（必需）：精确的 Context7 兼容库 ID（例如，`/mongodb/docs`、`/vercel/next.js`）
   - `topic`（可选）：将文档重点放在特定主题上（例如，"routing"、"hooks"）
-  - `tokens`（可选，默认 10000）：返回的最大令牌数。小于默认值 10000 的值会自动增加到 10000。
+  - `page`（可选，默认 1）：分页的页码（1-10）。如果上下文不够，请尝试使用相同主题的 page=2、page=3 等。
 
 ## 🛟 技巧
 

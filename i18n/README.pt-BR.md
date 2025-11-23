@@ -211,11 +211,9 @@ Pode ser instalado via [Zed Extensions](https://zed.dev/extensions?query=Context
 {
   "context_servers": {
     "Context7": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@upstash/context7-mcp"]
-      },
-      "settings": {}
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -718,10 +716,7 @@ Para mais informações, veja a [documentação oficial do GitHub](https://docs.
       "headers": {
         "CONTEXT7_API_KEY": "YOUR_API_KEY"
       },
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"]
     }
   }
 }
@@ -735,16 +730,8 @@ Ou, para um servidor local:
     "context7": {
       "type": "local",
       "command": "npx",
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ],
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "YOUR_API_KEY"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"],
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -1010,7 +997,7 @@ O Context7 MCP fornece as seguintes ferramentas que LLMs podem usar:
 - `get-library-docs`: Busca documentação para uma biblioteca usando um ID compatível com o Context7.
   - `context7CompatibleLibraryID` (obrigatório): ID exato compatível com Context7 (por exemplo, `/mongodb/docs`, `/vercel/next.js`)
   - `topic` (opcional): Focar os docs em um tópico específico (por exemplo, "routing", "hooks")
-  - `tokens` (opcional, padrão 10000): Número máximo de tokens para retornar. Valores menores que o padrão de 10000 são automaticamente aumentados para 10000.
+  - `page` (opcional, padrão 1): Número da página para paginação (1-10). Se o contexto não for suficiente, tente page=2, page=3, etc. com o mesmo tópico.
 
 ## 🛟 Dicas
 

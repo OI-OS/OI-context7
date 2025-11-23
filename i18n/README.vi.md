@@ -290,11 +290,9 @@ Có thể cài đặt thông qua [Zed Extensions](https://zed.dev/extensions?que
 {
   "context_servers": {
     "Context7": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@upstash/context7-mcp"]
-      },
-      "settings": {}
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -750,10 +748,7 @@ Thêm cấu hình sau vào phần `mcp` trong file cấu hình Copilot Coding Ag
       "headers": {
         "CONTEXT7_API_KEY": "YOUR_API_KEY"
       },
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"]
     }
   }
 }
@@ -767,16 +762,8 @@ Hoặc, đối với server cục bộ:
     "context7": {
       "type": "local",
       "command": "npx",
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ],
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "YOUR_API_KEY"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"],
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -785,9 +772,9 @@ Hoặc, đối với server cục bộ:
 Nếu file `mcp-config.json` không tồn tại, hãy tạo nó.
 
 </details>
-  
+
 <details>
-  
+
 <summary><b>Cài đặt trong Kiro</b></summary>
 
 Xem [Tài liệu Kiro Model Context Protocol](https://kiro.dev/docs/mcp/configuration/) để biết chi tiết.
@@ -877,7 +864,7 @@ Context7 MCP cung cấp các công cụ sau mà LLM có thể sử dụng:
 - `get-library-docs`: Lấy tài liệu cho thư viện sử dụng Context7-compatible library ID.
   - `context7CompatibleLibraryID` (bắt buộc): Context7-compatible library ID chính xác (ví dụ: `/mongodb/docs`, `/vercel/next.js`)
   - `topic` (tùy chọn): Tập trung tài liệu vào một chủ đề cụ thể (ví dụ: "routing", "hooks")
-  - `tokens` (tùy chọn, mặc định 10000): Số token tối đa để trả về. Giá trị nhỏ hơn giá trị mặc định 10000 sẽ tự động tăng lên 10000.
+  - `page` (tùy chọn, mặc định 1): Số trang cho phân trang (1-10). Nếu ngữ cảnh không đủ, hãy thử page=2, page=3, v.v. với cùng chủ đề.
 
 ## 🛟 Mẹo
 

@@ -19,7 +19,7 @@
 
 [![Website](https://img.shields.io/badge/Website-context7.com-blue)](https://context7.com) [![smithery badge](https://smithery.ai/badge/@upstash/context7-mcp)](https://smithery.ai/server/@upstash/context7-mcp) [![NPM Version](https://img.shields.io/npm/v/%40upstash%2Fcontext7-mcp?color=red)](https://www.npmjs.com/package/@upstash/context7-mcp) [![MIT licensed](https://img.shields.io/npm/l/%40upstash%2Fcontext7-mcp)](./LICENSE)
 
-[![繁體中文](https://img.shields.io/badge/docs-繁體中文-yellow)](./docs/README.zh-TW.md) [![简体中文](https://img.shields.io/badge/docs-简体中文-yellow)](./docs/README.zh-CN.md) [![日本語](https://img.shields.io/badge/docs-日本語-b7003a)](./docs/README.ja.md) [![한국어 문서](https://img.shields.io/badge/docs-한국어-green)](./docs/README.ko.md) [![Documentación en Español](https://img.shields.io/badge/docs-Español-orange)](./docs/README.es.md) [![Documentation en Français](https://img.shields.io/badge/docs-Français-blue)](./docs/README.fr.md) [![Documentação em Português (Brasil)](<https://img.shields.io/badge/docs-Português%20(Brasil)-purple>)](./docs/README.pt-BR.md) [![Documentazione in italiano](https://img.shields.io/badge/docs-Italian-red)](./docs/README.it.md) [![Dokumentasi Bahasa Indonesia](https://img.shields.io/badge/docs-Bahasa%20Indonesia-pink)](./docs/README.id-ID.md) [![Dokumentation auf Deutsch](https://img.shields.io/badge/docs-Deutsch-darkgreen)](./docs/README.de.md) [![Документация на русском языке](https://img.shields.io/badge/docs-Русский-darkblue)](./docs/README.ru.md) [![Українська документація](https://img.shields.io/badge/docs-Українська-lightblue)](./docs/README.uk.md) [![Türkçe Doküman](https://img.shields.io/badge/docs-Türkçe-blue)](./docs/README.tr.md) [![Arabic Documentation](https://img.shields.io/badge/docs-Arabic-white)](./docs/README.ar.md) [![Tiếng Việt](https://img.shields.io/badge/docs-Tiếng%20Việt-red)](./docs/README.vi.md)
+[![繁體中文](https://img.shields.io/badge/docs-繁體中文-yellow)](./i18n/README.zh-TW.md) [![简体中文](https://img.shields.io/badge/docs-简体中文-yellow)](./i18n/README.zh-CN.md) [![日本語](https://img.shields.io/badge/docs-日本語-b7003a)](./i18n/README.ja.md) [![한국어 문서](https://img.shields.io/badge/docs-한국어-green)](./i18n/README.ko.md) [![Documentación en Español](https://img.shields.io/badge/docs-Español-orange)](./i18n/README.es.md) [![Documentation en Français](https://img.shields.io/badge/docs-Français-blue)](./i18n/README.fr.md) [![Documentação em Português (Brasil)](<https://img.shields.io/badge/docs-Português%20(Brasil)-purple>)](./i18n/README.pt-BR.md) [![Documentazione in italiano](https://img.shields.io/badge/docs-Italian-red)](./i18n/README.it.md) [![Dokumentasi Bahasa Indonesia](https://img.shields.io/badge/docs-Bahasa%20Indonesia-pink)](./i18n/README.id-ID.md) [![Dokumentation auf Deutsch](https://img.shields.io/badge/docs-Deutsch-darkgreen)](./i18n/README.de.md) [![Документация на русском языке](https://img.shields.io/badge/docs-Русский-darkblue)](./i18n/README.ru.md) [![Українська документація](https://img.shields.io/badge/docs-Українська-lightblue)](./i18n/README.uk.md) [![Türkçe Doküman](https://img.shields.io/badge/docs-Türkçe-blue)](./i18n/README.tr.md) [![Arabic Documentation](https://img.shields.io/badge/docs-Arabic-white)](./i18n/README.ar.md) [![Tiếng Việt](https://img.shields.io/badge/docs-Tiếng%20Việt-red)](./i18n/README.vi.md)
 
 ## ❌ Without Context7
 
@@ -33,20 +33,22 @@ LLMs rely on outdated or generic information about the libraries you use. You ge
 
 Context7 MCP pulls up-to-date, version-specific documentation and code examples straight from the source — and places them directly into your prompt.
 
-Add `use context7` to your prompt in Cursor:
+Add `use context7` to your prompt (or [set up a rule](#️-installation) to auto-invoke):
 
 ```txt
-Create a Next.js middleware that checks for a valid JWT in cookies and redirects unauthenticated users to `/login`. use context7
+Create a Next.js middleware that checks for a valid JWT in cookies
+and redirects unauthenticated users to `/login`. use context7
 ```
 
 ```txt
-Configure a Cloudflare Worker script to cache JSON API responses for five minutes. use context7
+Configure a Cloudflare Worker script to cache
+JSON API responses for five minutes. use context7
 ```
 
 Context7 fetches up-to-date code examples and documentation right into your LLM's context.
 
 - 1️⃣ Write your prompt naturally
-- 2️⃣ Tell the LLM to `use context7`
+- 2️⃣ Tell the LLM to `use context7` (or [set up a rule](#️-installation) once)
 - 3️⃣ Get working code answers
 
 No tab-switching, no hallucinated APIs that don't exist, no outdated code generation.
@@ -56,7 +58,7 @@ No tab-switching, no hallucinated APIs that don't exist, no outdated code genera
 
 ## 📚 Adding Projects
 
-Check out our [project addition guide](./docs/adding-projects.md) to learn how to add (or update) your favorite libraries to Context7.
+Check out our [project addition guide](https://context7.com/docs/adding-libraries) to learn how to add (or update) your favorite libraries to Context7.
 
 ## 🛠️ Installation
 
@@ -65,6 +67,26 @@ Check out our [project addition guide](./docs/adding-projects.md) to learn how t
 - Node.js >= v18.0.0
 - Cursor, Claude Code, VSCode, Windsurf or another MCP Client
 - Context7 API Key (Optional) for higher rate limits and private repositories (Get yours by creating an account at [context7.com/dashboard](https://context7.com/dashboard))
+
+> [!TIP]
+> **Recommended Post-Setup: Add a Rule to Auto-Invoke Context7**
+>
+> After installing Context7 (see instructions below), enhance your workflow by adding a rule so you don't have to type `use context7` in every prompt. Define a simple rule in your MCP client's rule section to automatically invoke Context7 on any code question:
+>
+> - For Windsurf, in `.windsurfrules` file
+> - For Cursor, from `Cursor Settings > Rules` section
+> - For Claude Code, in `CLAUDE.md` file
+> - Or the equivalent in your MCP client
+>
+> **Example Rule:**
+>
+> ```txt
+> Always use context7 when I need code generation, setup or configuration steps, or
+> library/API documentation. This means you should automatically use the Context7 MCP
+> tools to resolve library id and get library docs without me having to explicitly ask.
+> ```
+>
+> From then on, you'll get Context7's docs in any related conversation without typing anything extra. You can alter the rule to match your use cases.
 
 <details>
 <summary><b>Installing via Smithery</b></summary>
@@ -334,6 +356,112 @@ Once the MCP server is added, you can start using Context7's up-to-date code doc
 ```
 
 Once the MCP server is added, restart your editor. If you receive any errors, check the syntax to make sure closing brackets or commas are not missing.
+
+</details>
+
+<details>
+<summary><b>Install in Kilo Code</b></summary>
+
+You can configure the Context7 MCP server in **Kilo Code** using either the UI or by editing your project's MCP configuration file.
+
+Kilo Code supports two configuration levels:
+
+- **Global MCP Configuration** — stored in `mcp_settings.json`
+- **Project-level MCP Configuration** — stored in `.kilocode/mcp.json` (recommended)
+
+If a server is defined in both places, the **project-level configuration overrides the global one**.
+
+---
+
+## Configure via Kilo Code UI
+
+1. Open **Kilo Code**.
+2. Click the **Settings** icon in the top-right corner.
+3. Navigate to **Settings → MCP Servers**.
+4. Click **Add Server**.
+5. Choose **HTTP Server** (Streamable HTTP Transport).
+6. Enter the details:
+
+**URL**
+`https://mcp.context7.com/mcp`
+
+**Headers → Add Header**
+
+- **Key:** `Authorization`
+- **Value:** `Bearer YOUR_API_KEY`
+
+7. Click **Save**.
+8. Ensure the server toggle is **enabled**.
+9. If needed, click **Refresh MCP Servers** to reload the configuration.
+
+---
+
+## Manual Configuration (`.kilocode/mcp.json`)
+
+To configure the server at the project level (recommended for team environments), create the following file:
+
+**`.kilocode/mcp.json`:**
+
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "type": "streamable-http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      },
+      "alwaysAllow": [],
+      "disabled": false
+    }
+  }
+}
+```
+
+Replace YOUR_API_KEY with your actual Context7 API key.
+
+After saving the file:
+
+- Open Settings → MCP Servers
+
+- Click Refresh MCP Servers
+
+Kilo Code will automatically detect and load the configuration.
+
+</details>
+
+<details>
+<summary><b>Install in Google Antigravity</b></summary>
+
+Add this to your Antigravity MCP config file. See [Antigravity MCP docs](https://antigravity.google/docs/mcp) for more info.
+
+#### Google Antigravity Remote Server Connection
+
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "serverUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+#### Google Antigravity Local Server Connection
+
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
+    }
+  }
+}
+```
 
 </details>
 
@@ -868,10 +996,7 @@ For more information, see the [official GitHub documentation](https://docs.githu
       "headers": {
         "CONTEXT7_API_KEY": "YOUR_API_KEY"
       },
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"]
     }
   }
 }
@@ -885,16 +1010,8 @@ Or, for a local server:
     "context7": {
       "type": "local",
       "command": "npx",
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ],
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "YOUR_API_KEY"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"],
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -1185,6 +1302,24 @@ Once configured, Context7 tools will be available in your droid sessions. Type `
 
 </details>
 
+<details>
+<summary><b>Install in Emdash</b></summary>
+
+[Emdash](https://github.com/generalaction/emdash) is an orchestration layer for running multiple coding agents in parallel. Provider-agnostic, worktree-isolated, and local-first. Emdash supports Context7 MCP to enable Context7 for your agents.
+
+**What Emdash provides:**
+
+- Global toggle: Settings → MCP → "Enable Context7 MCP"
+- Per-workspace enable: The Context7 button in the ProviderBar (off by default). First click enables it for that workspace. Clicking again disables it.
+- ProviderBar: The Context7 button shows status, a short explanation, and a link to docs
+
+**What you still need to do:**
+Configure your coding agent (Codex, Claude Code, Cursor, etc.) to connect to Context7 MCP. Emdash does not modify your agent's config. See the respective MCP configuration sections above for your agent (e.g., OpenAI Codex, Claude Code, Cursor).
+
+See the [Emdash repository](https://github.com/generalaction/emdash) for more information.
+
+</details>
+
 ## 🔨 Available Tools
 
 Context7 MCP provides the following tools that LLMs can use:
@@ -1195,29 +1330,13 @@ Context7 MCP provides the following tools that LLMs can use:
 - `get-library-docs`: Fetches documentation for a library using a Context7-compatible library ID.
   - `context7CompatibleLibraryID` (required): Exact Context7-compatible library ID (e.g., `/mongodb/docs`, `/vercel/next.js`)
   - `topic` (optional): Focus the docs on a specific topic (e.g., "routing", "hooks")
-  - `tokens` (optional, default 5000): Max number of tokens to return. Values less than 1000 are automatically increased to 1000.
+  - `page` (optional, default 1): Page number for pagination (1-10). If the context is not sufficient, try page=2, page=3, etc. with the same topic.
 
 ## 🛟 Tips
 
 ### Add a Rule
 
-If you don’t want to add `use context7` to every prompt, you can define a simple rule in your MCP client's rule section:
-
-- For Windsurf, in `.windsurfrules` file
-- For Cursor, from `Cursor Settings > Rules` section
-- For Claude Code, in `CLAUDE.md` file
-
-Or the equivalent in your MCP client to auto-invoke Context7 on any code question.
-
-#### Example Rule
-
-```txt
-Always use context7 when I need code generation, setup or configuration steps, or
-library/API documentation. This means you should automatically use the Context7 MCP
-tools to resolve library id and get library docs without me having to explicitly ask.
-```
-
-From then on, you’ll get Context7’s docs in any related conversation without typing anything extra. You can alter the rule to match your use cases.
+To avoid typing `use context7` in every prompt, you can add a rule to your MCP client that automatically invokes Context7 for code-related questions. See the [recommended setup in the Installation section](#️-installation) for detailed instructions and example rules.
 
 ### Use Library Id
 

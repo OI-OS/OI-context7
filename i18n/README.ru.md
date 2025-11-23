@@ -138,11 +138,9 @@ npx -y @smithery/cli install @upstash/context7-mcp --client claude
 {
   "context_servers": {
     "Context7": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@upstash/context7-mcp"]
-      },
-      "settings": {}
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -218,10 +216,7 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
       "headers": {
         "CONTEXT7_API_KEY": "YOUR_API_KEY"
       },
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"]
     }
   }
 }
@@ -235,16 +230,8 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
     "context7": {
       "type": "local",
       "command": "npx",
-      "tools": [
-        "get-library-docs", 
-        "resolve-library-id"
-      ],
-      "args": [
-        "-y",
-        "@upstash/context7-mcp",
-        "--api-key",
-        "YOUR_API_KEY"
-      ]
+      "tools": ["get-library-docs", "resolve-library-id"],
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -326,26 +313,6 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
 }
 ```
 
-### Переменные окружения
-
-- `DEFAULT_MINIMUM_TOKENS`: минимальное количество токенов, необходимое для получения документации (по умолчанию: 10000).
-
-Examples:
-
-```json
-{
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
-      "env": {
-        "DEFAULT_MINIMUM_TOKENS": "10000"
-      }
-    }
-  }
-}
-```
-
 ### Доступные инструменты
 
 - `resolve-library-id`: преобразует общее название библиотеки в совместимый с Context7 идентификатор.
@@ -353,7 +320,7 @@ Examples:
 - `get-library-docs`: получает документацию по библиотеке по совместимому с Context7 идентификатору.
   - `context7CompatibleLibraryID` (обязательно)
   - `topic` (необязательно): фокусирует документацию на определённой теме (например, "routing", "hooks")
-  - `tokens` (необязательно, по умолчанию 10000): максимальное число токенов в ответе. Значения ниже заданного `DEFAULT_MINIMUM_TOKENS` будут автоматически увеличены до него.
+  - `page` (необязательно, по умолчанию 1): номер страницы для пагинации (1-10). Если контекста недостаточно, попробуйте page=2, page=3 и т.д. с той же темой.
 
 ## Разработка
 
