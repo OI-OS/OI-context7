@@ -68,7 +68,7 @@
       "OI-context7::resolve-library-id.libraryName": "conditional:if_contains:/|then:regex:(/[a-zA-Z0-9._-]+(?:/[a-zA-Z0-9._-]+)?(?:/[a-zA-Z0-9._-]+)?)|else:remove:resolve,library,id,find,search,lookup,get,for,with,the,a,an"
     },
     "get-library-docs": {
-      "OI-context7::get-library-docs.context7CompatibleLibraryID": "conditional:if_contains:/|then:regex:(/[a-zA-Z0-9._-]+(?:/[a-zA-Z0-9._-]+)?(?:/[a-zA-Z0-9._-]+)?)|else:remove:get,fetch,library,docs,documentation,for,with,the,a,an",
+      "OI-context7::get-library-docs.context7CompatibleLibraryID": "regex:(/[a-zA-Z0-9._-]+(?:/[a-zA-Z0-9._-]+)*(?:/[a-zA-Z0-9._-]+)?)",
       "OI-context7::get-library-docs.topic": "regex:(?:topic|focus|about|on)[\\s:]+([^\\s]+(?:\\s+[^\\s]+)*)",
       "OI-context7::get-library-docs.tokens": "regex:(?:tokens?|max[\\s_-]?tokens?)[\\s:]+(\\d+)"
     }
