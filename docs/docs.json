@@ -8,6 +8,9 @@
     "light": "#ECFDF5",
     "dark": "#064E3B"
   },
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude"]
+  },
   "navigation": {
     "groups": [
       {
@@ -26,6 +29,7 @@
         "pages": [
           "dashboard/api-keys",
           "dashboard/libraries",
+          "dashboard/claiming-libraries",
           "dashboard/private-repositories",
           "dashboard/team",
           "dashboard/usage",
@@ -33,8 +37,27 @@
         ]
       },
       {
+        "group": "SDKs",
+        "pages": [
+          {
+            "group": "TypeScript",
+            "pages": [
+              "sdks/ts/getting-started",
+              {
+                "group": "Commands",
+                "pages": ["sdks/ts/commands/search-library", "sdks/ts/commands/get-docs"]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "group": "API Reference",
         "openapi": "openapi.json"
+      },
+      {
+        "group": "Integrations",
+        "pages": ["integrations/code-rabbit"]
       },
       {
         "group": "Resources",

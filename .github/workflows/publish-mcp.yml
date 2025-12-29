@@ -17,7 +17,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -31,7 +31,7 @@ jobs:
             # Remove 'v' prefix if it exists
             VERSION="${VERSION#v}"
           else
-            VERSION=$(node -p "require('./package.json').version")
+            VERSION=$(node -p "require('./packages/mcp/package.json').version")
           fi
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "Publishing version: $VERSION"
