@@ -61,6 +61,26 @@
       "keyword": "use context7",
       "tool_name": "resolve-library-id",
       "priority": 5
+    },
+    {
+      "keyword": "nextjs docs",
+      "tool_name": "resolve-library-id",
+      "priority": 10
+    },
+    {
+      "keyword": "nextjs library",
+      "tool_name": "resolve-library-id",
+      "priority": 10
+    },
+    {
+      "keyword": "react docs",
+      "tool_name": "resolve-library-id",
+      "priority": 10
+    },
+    {
+      "keyword": "react library",
+      "tool_name": "resolve-library-id",
+      "priority": 10
     }
   ],
   "parameter_extractors": {
