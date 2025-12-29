@@ -93,6 +93,9 @@
       "OI-context7::get-library-docs.tokens": "regex:(?:tokens?|max[\\s_-]?tokens?)[\\s:]+(\\d+)"
     }
   },
-  "reminder_message": "Context7 MCP server provides up-to-date library documentation. Use resolve-library-id to find library IDs, then get-library-docs to fetch documentation. API key (CONTEXT7_API_KEY) is optional but recommended for higher rate limits. Library IDs use format /org/project or /org/project/version."
+  "reminder_message": "Context7 MCP server provides up-to-date library documentation. Use resolve-library-id to find library IDs, then get-library-docs to fetch documentation. API key (CONTEXT7_API_KEY) is optional but recommended for higher rate limits. Library IDs use format /org/project or /org/project/version.",
+  "notes": {
+    "api_key": "CONTEXT7_API_KEY is optional but recommended for higher rate limits. Add to .env file: CONTEXT7_API_KEY=your_api_key_here. Replace api_key with your actual Context7 API key from context7.com/dashboard."
+  }
 }
 
